@@ -4,10 +4,28 @@ on:
   push:
     tags: ["*"]
 
+permissions: {}
+
 jobs:
   release:
-    uses: obsidianmd/obsidian-workflows/.github/workflows/release.yml@v1
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
       attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+
+      # Validates the tag against the manifest, attests theme.css and
+      # creates a draft release with manifest.json and theme.css
+      - uses: obsidianmd/obsidian-workflows@8167caed39664214d82c86fdfa32e06d8d55f61d # v1.2.3
+        with:
+          mode: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
