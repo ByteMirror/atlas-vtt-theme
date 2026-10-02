@@ -10,6 +10,8 @@ A theme for [Obsidian](https://obsidian.md) that makes notes look like the pages
 
 - A parchment light scheme and a warm, candle-lit dark scheme.
 - Sidebars, menus, dialogs, buttons and input fields in the same tones, so Obsidian's settings and the panels of Atlas VTT belong to the page.
+- Ivy on Atlas VTT's asset manager and statblock previews, the ivy of the Atlas sword. It grows nowhere else in Obsidian.
+- In Atlas VTT's statblocks, creature names and section headings are set in the heading font, as is the name of a roll on the dice.
 - Headings, file names, table headers and callout titles in Fantaisie Artistique. The font is part of the theme, so there is nothing to install.
 - Note text in a book serif: Iowan Old Style, Palatino or Georgia, whichever your system has.
 - A double rule under the note title, under first and second level headings, and for `---`.
