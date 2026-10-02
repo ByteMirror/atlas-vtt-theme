@@ -21,47 +21,127 @@
 
 /* ------------------------------------------------------------
    Colours
+   Obsidian builds every surface from the base scale, so the
+   scale itself is tinted: no white field or grey border is left
+   over. Depth is drawn differently in the two schemes.
+   On parchment a shadow carries it: what floats keeps the page
+   tone and casts an umber shadow, and a field is pressed in, a
+   shade darker than the surface it sits on.
+   By candle light a shadow does not show, so every step up is a
+   step lighter: sidebars above the page, menus above those, and
+   a field lighter than its surface.
+   In both, a field is its surface plus a thin wash of the text
+   colour, so it stands off the page and the sidebars alike.
    ------------------------------------------------------------ */
 .theme-light {
   --atlas-theme-red: #a41e22; /* classic module red */
   --atlas-theme-rule: #b4a284;
+  --atlas-theme-paper: #fcf7ea; /* thumbs and knobs */
 
   /* parchment */
-  --background-primary: #f5eddc;
-  --background-primary-alt: #efe5cd;
-  --background-secondary: #ede2c8;
-  --background-secondary-alt: #e5d8b8;
-  --background-modifier-border: #cbb894;
-  --text-normal: #3a2c1a;
-  --text-muted: #6d5c40;
-  --text-faint: #8d7c5f;
+  --color-base-00: #f5eddc;
+  --color-base-05: #f2e9d5;
+  --color-base-10: #efe5ce;
+  --color-base-20: #e9dec3;
+  --color-base-25: #e2d5b6;
+  --color-base-30: #cbb894;
+  --color-base-35: #b8a37c;
+  --color-base-40: #a38d66;
+  --color-base-50: #8d7c5f;
+  --color-base-60: #7a694b;
+  --color-base-70: #6d5c40;
+  --color-base-100: #3a2c1a;
+
+  /* overlays, hover tints and hairlines are mixed from ink and paper,
+     not from black and white */
+  --mono-0: #fbf5e6;
+  --mono-rgb-0: 251, 245, 230;
+  --mono-100: #2a1e0e;
+  --mono-rgb-100: 42, 30, 14;
+  --background-modifier-cover: rgb(58 44 26 / 32%);
+  --background-modifier-box-shadow: rgb(60 40 15 / 14%);
+
+  /* wells sit below the chrome; a field is a wash of ink */
+  --background-secondary-alt: var(--color-base-25);
+  --background-modifier-form-field: color-mix(in oklch, var(--mono-100) 7%, transparent);
+  --code-background: #ece0c4;
+
+  /* links */
   --text-accent: #8a2b12;
   --text-accent-hover: #a41e22;
-  --code-background: #ece0c4;
+
+  /* buttons and dropdowns: one step below the page on every platform */
+  --interactive-normal: var(--color-base-25);
+  --interactive-hover: #d9caa7;
+
+  /* shadows in umber: black ones turn grey on parchment */
+  --shadow-xs: 0 1px 2px rgb(60 40 15 / 10%), 0 3px 10px rgb(60 40 15 / 10%);
+  --shadow-s: 0 1px 2px rgb(60 40 15 / 12%), 0 4px 10px rgb(60 40 15 / 12%), 0 16px 32px rgb(60 40 15 / 16%);
+  --shadow-l: 0 2px 6px rgb(60 40 15 / 14%), 0 10px 28px rgb(60 40 15 / 18%), 0 28px 64px rgb(60 40 15 / 22%);
 }
 
 .theme-dark {
   --atlas-theme-red: #d4756b;
   --atlas-theme-rule: #5c503c;
+  --atlas-theme-paper: #e9dfc8;
 
   /* warm candle-lit dark */
-  --background-primary: #201b15;
-  --background-primary-alt: #262019;
-  --background-secondary: #262019;
-  --background-secondary-alt: #2e2820;
-  --background-modifier-border: #4a4030;
-  --text-normal: #ded2b8;
-  --text-muted: #a89878;
-  --text-faint: #7d6f55;
+  --color-base-00: #201b15;
+  --color-base-05: #231d17;
+  --color-base-10: #262019;
+  --color-base-20: #2b241c;
+  --color-base-25: #322a20;
+  --color-base-30: #4a4030;
+  --color-base-35: #5c4f3b;
+  --color-base-40: #716247;
+  --color-base-50: #7d6f55;
+  --color-base-60: #96876a;
+  --color-base-70: #a89878;
+  --color-base-100: #ded2b8;
+
+  /* ink and paper swap places */
+  --mono-0: #120e09;
+  --mono-rgb-0: 18, 14, 9;
+  --mono-100: #f0e6d0;
+  --mono-rgb-100: 240, 230, 208;
+  --background-modifier-cover: rgb(10 8 5 / 60%);
+
+  /* a field is a wash of light; menus rise above the page */
+  --background-secondary-alt: var(--color-base-25);
+  --background-modifier-form-field: color-mix(in oklch, var(--mono-100) 8%, transparent);
+  --menu-background: var(--color-base-20);
+  --suggestion-background: var(--color-base-20);
+  --code-background: #2a241c;
+
+  /* links */
   --text-accent: #d4756b;
   --text-accent-hover: #e08a80;
-  --code-background: #2a241c;
+
+  /* buttons and dropdowns: one step above the page */
+  --interactive-normal: #3a3125;
+  --interactive-hover: #453a2b;
+
+  /* in the dark the edge carries the depth, the shadow only grounds it */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 25%), 0 3px 10px rgb(0 0 0 / 30%);
+  --shadow-s: 0 1px 2px rgb(0 0 0 / 30%), 0 4px 10px rgb(0 0 0 / 30%), 0 16px 32px rgb(0 0 0 / 40%);
+  --shadow-l: 0 2px 6px rgb(0 0 0 / 30%), 0 10px 28px rgb(0 0 0 / 40%), 0 30px 80px rgb(0 0 0 / 50%);
 }
 
 /* ------------------------------------------------------------
    Type and furniture, through Obsidian's own variables
    ------------------------------------------------------------ */
 body {
+  --background-modifier-hover: color-mix(in oklch, var(--mono-100) 8%, transparent);
+
+  /* on parchment whatever floats takes the page tone and is set off
+     by its edge and shadow; the dark scheme lifts it instead */
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--color-base-40);
+  --toggle-thumb-color: var(--atlas-theme-paper);
+  --slider-thumb-background: var(--atlas-theme-paper);
+  --slider-thumb-background-hover: var(--atlas-theme-paper);
+
+  /* type */
   --atlas-theme-heading-font: "FantaisieArtistique", "Iowan Old Style", "Palatino", "Georgia", serif;
   --atlas-theme-body-serif: "Iowan Old Style", "Palatino", "Palatino Linotype", "Georgia", serif;
   --atlas-theme-heading-tracking: 0.02em;

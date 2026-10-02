@@ -9,6 +9,7 @@ A theme for [Obsidian](https://obsidian.md) that makes notes look like the pages
 ## What your notes get
 
 - A parchment light scheme and a warm, candle-lit dark scheme.
+- Sidebars, menus, dialogs, buttons and input fields in the same tones, so Obsidian's settings and the panels of Atlas VTT belong to the page.
 - Headings, file names, table headers and callout titles in Fantaisie Artistique. The font is part of the theme, so there is nothing to install.
 - Note text in a book serif: Iowan Old Style, Palatino or Georgia, whichever your system has.
 - A double rule under the note title, under first and second level headings, and for `---`.
