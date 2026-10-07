@@ -13,7 +13,7 @@ A theme for [Obsidian](https://obsidian.md) that makes notes look like the pages
 - Ivy on Atlas VTT's asset manager, statblock previews and command palette, the ivy of the Atlas sword. It grows nowhere else in Obsidian.
 - In Atlas VTT's statblocks, creature names and section headings are set in the heading font, as is the name of a roll on the dice.
 - Headings, file names, table headers and callout titles in Fantaisie Artistique. The font is part of the theme, so there is nothing to install.
-- Note text in a book serif: Iowan Old Style, Palatino or Georgia, whichever your system has.
+- Note text in Libron, a book serif. It is part of the theme too.
 - A double rule under the note title, under first and second level headings, and for `---`.
 - Block quotes as boxed text to read aloud at the table.
 - Labels: bold text that opens a line, as in `**Lodging:** A bed in the loft costs 2 silver pennies`, is set in the heading font and in red.
@@ -32,4 +32,4 @@ To install by hand, download `manifest.json` and `theme.css` from the [latest re
 
 The theme is released under the [MIT License](./LICENSE).
 
-Fantaisie Artistique was digitised by George Williams and is embedded in `theme.css` under the [SIL Open Font License 1.1](./fonts/OFL.txt). The font file is in [`fonts/`](./fonts).
+Fantaisie Artistique was digitised by George Williams and is embedded in `theme.css` under the [SIL Open Font License 1.1](./fonts/OFL.txt). Libron is by Nico Verbruggen and is embedded under the [same licence](./fonts/OFL-Libron.txt). The font files are in [`fonts/`](./fonts).
